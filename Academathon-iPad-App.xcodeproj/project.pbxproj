@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		860995CF2FC360FF00D6496D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 860995B62FC360FD00D6496D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 860995BD2FC360FD00D6496D;
+			remoteInfo = "Academathon-iPad-App";
+		};
+		860995D92FC360FF00D6496D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 860995B62FC360FD00D6496D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 860995BD2FC360FD00D6496D;
+			remoteInfo = "Academathon-iPad-App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		860995BE2FC360FD00D6496D /* Academathon-iPad-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Academathon-iPad-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		860995CE2FC360FF00D6496D /* Academathon-iPad-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Academathon-iPad-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		860995D82FC360FF00D6496D /* Academathon-iPad-AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Academathon-iPad-AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		860995C02FC360FD00D6496D /* Academathon-iPad-App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Academathon-iPad-App";
+			sourceTree = "<group>";
+		};
+		860995D12FC360FF00D6496D /* Academathon-iPad-AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Academathon-iPad-AppTests";
+			sourceTree = "<group>";
+		};
+		860995DB2FC360FF00D6496D /* Academathon-iPad-AppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Academathon-iPad-AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		860995BB2FC360FD00D6496D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		860995CB2FC360FF00D6496D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		860995D52FC360FF00D6496D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		860995B52FC360FD00D6496D = {
+			isa = PBXGroup;
+			children = (
+				860995C02FC360FD00D6496D /* Academathon-iPad-App */,
+				860995D12FC360FF00D6496D /* Academathon-iPad-AppTests */,
+				860995DB2FC360FF00D6496D /* Academathon-iPad-AppUITests */,
+				860995BF2FC360FD00D6496D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		860995BF2FC360FD00D6496D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				860995BE2FC360FD00D6496D /* Academathon-iPad-App.app */,
+				860995CE2FC360FF00D6496D /* Academathon-iPad-AppTests.xctest */,
+				860995D82FC360FF00D6496D /* Academathon-iPad-AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		860995BD2FC360FD00D6496D /* Academathon-iPad-App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 860995E22FC360FF00D6496D /* Build configuration list for PBXNativeTarget "Academathon-iPad-App" */;
+			buildPhases = (
+				860995BA2FC360FD00D6496D /* Sources */,
+				860995BB2FC360FD00D6496D /* Frameworks */,
+				860995BC2FC360FD00D6496D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				860995C02FC360FD00D6496D /* Academathon-iPad-App */,
+			);
+			name = "Academathon-iPad-App";
+			packageProductDependencies = (
+			);
+			productName = "Academathon-iPad-App";
+			productReference = 860995BE2FC360FD00D6496D /* Academathon-iPad-App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		860995CD2FC360FF00D6496D /* Academathon-iPad-AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 860995E52FC360FF00D6496D /* Build configuration list for PBXNativeTarget "Academathon-iPad-AppTests" */;
+			buildPhases = (
+				860995CA2FC360FF00D6496D /* Sources */,
+				860995CB2FC360FF00D6496D /* Frameworks */,
+				860995CC2FC360FF00D6496D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				860995D02FC360FF00D6496D /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				860995D12FC360FF00D6496D /* Academathon-iPad-AppTests */,
+			);
+			name = "Academathon-iPad-AppTests";
+			packageProductDependencies = (
+			);
+			productName = "Academathon-iPad-AppTests";
+			productReference = 860995CE2FC360FF00D6496D /* Academathon-iPad-AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		860995D72FC360FF00D6496D /* Academathon-iPad-AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 860995E82FC360FF00D6496D /* Build configuration list for PBXNativeTarget "Academathon-iPad-AppUITests" */;
+			buildPhases = (
+				860995D42FC360FF00D6496D /* Sources */,
+				860995D52FC360FF00D6496D /* Frameworks */,
+				860995D62FC360FF00D6496D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				860995DA2FC360FF00D6496D /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				860995DB2FC360FF00D6496D /* Academathon-iPad-AppUITests */,
+			);
+			name = "Academathon-iPad-AppUITests";
+			packageProductDependencies = (
+			);
+			productName = "Academathon-iPad-AppUITests";
+			productReference = 860995D82FC360FF00D6496D /* Academathon-iPad-AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		860995B62FC360FD00D6496D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					860995BD2FC360FD00D6496D = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					860995CD2FC360FF00D6496D = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 860995BD2FC360FD00D6496D;
+					};
+					860995D72FC360FF00D6496D = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 860995BD2FC360FD00D6496D;
+					};
+				};
+			};
+			buildConfigurationList = 860995B92FC360FD00D6496D /* Build configuration list for PBXProject "Academathon-iPad-App" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 860995B52FC360FD00D6496D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 860995BF2FC360FD00D6496D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				860995BD2FC360FD00D6496D /* Academathon-iPad-App */,
+				860995CD2FC360FF00D6496D /* Academathon-iPad-AppTests */,
+				860995D72FC360FF00D6496D /* Academathon-iPad-AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		860995BC2FC360FD00D6496D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		860995CC2FC360FF00D6496D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		860995D62FC360FF00D6496D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		860995BA2FC360FD00D6496D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		860995CA2FC360FF00D6496D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		860995D42FC360FF00D6496D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		860995D02FC360FF00D6496D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 860995BD2FC360FD00D6496D /* Academathon-iPad-App */;
+			targetProxy = 860995CF2FC360FF00D6496D /* PBXContainerItemProxy */;
+		};
+		860995DA2FC360FF00D6496D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 860995BD2FC360FD00D6496D /* Academathon-iPad-App */;
+			targetProxy = 860995D92FC360FF00D6496D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		860995E02FC360FF00D6496D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		860995E12FC360FF00D6496D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		860995E32FC360FF00D6496D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Academathon-iPad-App/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Sahil.Academathon-iPad-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		860995E42FC360FF00D6496D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Academathon-iPad-App/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Sahil.Academathon-iPad-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		860995E62FC360FF00D6496D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Sahil.Academathon-iPad-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Academathon-iPad-App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Academathon-iPad-App";
+			};
+			name = Debug;
+		};
+		860995E72FC360FF00D6496D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Sahil.Academathon-iPad-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Academathon-iPad-App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Academathon-iPad-App";
+			};
+			name = Release;
+		};
+		860995E92FC360FF00D6496D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Sahil.Academathon-iPad-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Academathon-iPad-App";
+			};
+			name = Debug;
+		};
+		860995EA2FC360FF00D6496D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Sahil.Academathon-iPad-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Academathon-iPad-App";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		860995B92FC360FD00D6496D /* Build configuration list for PBXProject "Academathon-iPad-App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				860995E02FC360FF00D6496D /* Debug */,
+				860995E12FC360FF00D6496D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		860995E22FC360FF00D6496D /* Build configuration list for PBXNativeTarget "Academathon-iPad-App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				860995E32FC360FF00D6496D /* Debug */,
+				860995E42FC360FF00D6496D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		860995E52FC360FF00D6496D /* Build configuration list for PBXNativeTarget "Academathon-iPad-AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				860995E62FC360FF00D6496D /* Debug */,
+				860995E72FC360FF00D6496D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		860995E82FC360FF00D6496D /* Build configuration list for PBXNativeTarget "Academathon-iPad-AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				860995E92FC360FF00D6496D /* Debug */,
+				860995EA2FC360FF00D6496D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 860995B62FC360FD00D6496D /* Project object */;
+}
