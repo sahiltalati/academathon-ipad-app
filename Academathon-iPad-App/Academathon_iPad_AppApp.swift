@@ -11,7 +11,7 @@ import SwiftUI
 struct Academathon_iPad_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
         }
     }
 }
