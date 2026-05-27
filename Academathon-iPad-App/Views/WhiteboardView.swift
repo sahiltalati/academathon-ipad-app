@@ -18,20 +18,32 @@ struct WhiteboardView: View {
         VStack(spacing: 0) {
             HStack {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(booking.studentName)
+                    Text(booking.tutorName ?? "Unknown Tutor")
                         .font(.headline)
-                    Text("\(booking.subject) · \(Self.dateFormatter.string(from: booking.startTime))")
+                        .foregroundStyle(Theme.textPrimary)
+                    Text("\(booking.subject ?? "No subject") · \(Self.dateFormatter.string(from: booking.startTime))")
                         .font(.subheadline)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(Theme.textSecondary)
                 }
                 Spacer()
                 Button("Save Drawing") {
                     saveDrawing()
                 }
-                .buttonStyle(.borderedProminent)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 10)
+                .background(Theme.accent)
+                .foregroundStyle(.white)
+                .fontWeight(.semibold)
+                .clipShape(RoundedRectangle(cornerRadius: Theme.radiusMd))
             }
             .padding()
-            .background(.ultraThinMaterial)
+            .background(Theme.card)
+            .overlay(
+                Rectangle()
+                    .frame(height: 1)
+                    .foregroundStyle(Theme.border),
+                alignment: .bottom
+            )
 
             CanvasView(canvasView: $canvasView, toolPicker: toolPicker)
                 .ignoresSafeArea(edges: .bottom)
