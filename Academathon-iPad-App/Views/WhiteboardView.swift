@@ -20,6 +20,10 @@ struct WhiteboardView: View {
     @State private var currentPage = 0
     @State private var showSaveConfirmation = false
     @State private var showGallery = false
+    @State private var showAISheet = false
+    @State private var isAILoading = false
+    @State private var aiExplanation: String?
+    @State private var aiErrorMessage: String?
 
     private static let dateFormatter: DateFormatter = {
         let f = DateFormatter()
@@ -86,6 +90,27 @@ struct WhiteboardView: View {
                         .imageScale(.large)
                 }
 
+                // AI Explain button
+                Button {
+                    explainWithAI()
+                } label: {
+                    HStack(spacing: 6) {
+                        if isAILoading {
+                            ProgressView().tint(.white).scaleEffect(0.75)
+                        } else {
+                            Image(systemName: "sparkles")
+                        }
+                        Text("Explain")
+                            .fontWeight(.semibold)
+                    }
+                    .padding(.horizontal, 14)
+                    .padding(.vertical, 10)
+                    .background(Color(hex: "7C3AED"))
+                    .foregroundStyle(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: Theme.radiusMd))
+                }
+                .disabled(isAILoading)
+
                 Button("Save Page") {
                     savePage()
                 }
@@ -123,10 +148,12 @@ struct WhiteboardView: View {
                 ForEach(Array(pages.enumerated()), id: \.element.id) { index, page in
                     CanvasView(canvasView: page.canvas, toolPicker: toolPicker)
                         .tag(index)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .ignoresSafeArea(edges: .bottom)
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
+            .background(Color.white)   // override TabView's default black background
             .ignoresSafeArea(edges: .bottom)
         }
         .toolbar(.hidden, for: .navigationBar)
@@ -141,12 +168,62 @@ struct WhiteboardView: View {
         .sheet(isPresented: $showGallery) {
             DrawingGalleryView(bookingId: booking.id)
         }
+        .sheet(isPresented: $showAISheet) {
+            AIExplanationSheet(
+                isLoading: isAILoading,
+                explanation: aiExplanation,
+                errorMessage: aiErrorMessage
+            )
+        }
     }
 
     private func addPage() {
         let newPage = CanvasPage()
         pages.append(newPage)
         currentPage = pages.count - 1
+    }
+
+    private func explainWithAI() {
+        let canvas = pages[currentPage].canvas
+
+        // Guard: nothing to explain if the page is blank
+        guard !canvas.drawing.strokes.isEmpty else {
+            aiExplanation = nil
+            aiErrorMessage = "Nothing to explain yet — draw something on this page first."
+            showAISheet = true
+            return
+        }
+
+        // Reset state and open the sheet immediately so the user sees the
+        // loading spinner straight away rather than waiting in silence.
+        aiExplanation = nil
+        aiErrorMessage = nil
+        isAILoading = true
+        showAISheet = true
+
+        Task {
+            // Crop the capture to where the user actually drew (with padding),
+            // rather than sending the entire blank canvas.
+            // PKDrawing.bounds gives the tight bounding box of all strokes.
+            // We expand it 80pt on each side so nothing is clipped at the edges.
+            let strokeBounds = canvas.drawing.bounds
+            let fallback = canvas.bounds.isEmpty
+                ? CGRect(x: 0, y: 0, width: 1024, height: 768)
+                : canvas.bounds
+            let captureBounds = strokeBounds.isNull || strokeBounds.isEmpty
+                ? fallback
+                : strokeBounds.insetBy(dx: -80, dy: -80)
+            // UIScreen.main.scale (2× or 3×) gives a sharper image — important
+            // for GPT-4o to read handwriting clearly.
+            let image = canvas.drawing.image(from: captureBounds, scale: UIScreen.main.scale)
+
+            do {
+                aiExplanation = try await AIService().explain(image: image)
+            } catch {
+                aiErrorMessage = error.localizedDescription
+            }
+            isAILoading = false
+        }
     }
 
     private func savePage() {
@@ -359,6 +436,74 @@ struct EditableDrawingView: View {
         let data = page.canvas.drawing.dataRepresentation()
         try? data.write(to: drawingURL)
         dismiss()
+    }
+}
+
+// MARK: - AI Explanation Sheet
+
+struct AIExplanationSheet: View {
+    let isLoading: Bool
+    let explanation: String?
+    let errorMessage: String?
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        NavigationStack {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 20) {
+
+                    if isLoading {
+                        // Shown immediately while waiting for the API response
+                        VStack(spacing: 16) {
+                            ProgressView()
+                                .scaleEffect(1.4)
+                                .tint(Color(hex: "7C3AED"))
+                            Text("Reading your notes…")
+                                .font(.subheadline)
+                                .foregroundStyle(Theme.textSecondary)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.top, 60)
+
+                    } else if let error = errorMessage {
+                        Label(error, systemImage: "exclamationmark.triangle")
+                            .foregroundStyle(.red)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .padding(.top, 40)
+
+                    } else if let text = explanation {
+                        // AI label
+                        HStack(spacing: 8) {
+                            Image(systemName: "sparkles")
+                                .foregroundStyle(Color(hex: "7C3AED"))
+                            Text("AI Explanation")
+                                .font(.headline)
+                                .foregroundStyle(Theme.textPrimary)
+                        }
+
+                        // The actual explanation text
+                        Text(text)
+                            .font(.body)
+                            .foregroundStyle(Theme.textPrimary)
+                            .lineSpacing(6)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                }
+                .padding(24)
+            }
+            .background(Theme.bg)
+            .navigationTitle("Explain with AI")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Done") { dismiss() }
+                        .foregroundStyle(Theme.accent)
+                }
+            }
+        }
+        // .presentationDetents lets the sheet snap to half-screen or full-screen.
+        // The user can drag it up for more room to read a long explanation.
+        .presentationDetents([.medium, .large])
     }
 }
 
