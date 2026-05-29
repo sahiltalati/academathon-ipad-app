@@ -63,3 +63,6 @@ fastlane/test_output
 
 # Claude Code
 .claude/
+
+# API keys — never commit this file
+Academathon-iPad-App/Config.swift

@@ -5,57 +5,127 @@ struct LoginView: View {
     var onLoginSuccess: () -> Void
 
     var body: some View {
-        VStack(spacing: 24) {
-            Spacer()
+        ZStack {
+            Theme.bg.ignoresSafeArea()
 
-            VStack(spacing: 8) {
-                Text("Academathon")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                Text("Tutor Whiteboard")
-                    .font(.title2)
-                    .foregroundStyle(.secondary)
-            }
+            ScrollView {
+                VStack {
+                    Spacer(minLength: 60)
 
-            VStack(spacing: 16) {
-                TextField("Email", text: $viewModel.email)
-                    .textFieldStyle(.roundedBorder)
-                    .keyboardType(.emailAddress)
-                    .autocapitalization(.none)
-                    .autocorrectionDisabled()
+                    // Card
+                    VStack(alignment: .leading, spacing: 0) {
 
-                SecureField("Password", text: $viewModel.password)
-                    .textFieldStyle(.roundedBorder)
-            }
+                        // Logo + heading
+                        VStack(alignment: .center, spacing: 12) {
+                            Image("AppLogo")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 72, height: 72)
+                                .clipShape(RoundedRectangle(cornerRadius: 16))
 
-            if let error = viewModel.errorMessage {
-                Text(error)
-                    .foregroundStyle(.red)
-                    .font(.callout)
-                    .multilineTextAlignment(.center)
-            }
+                            Text("Welcome back")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .foregroundStyle(Theme.textPrimary)
 
-            Button {
-                Task { await viewModel.login() }
-            } label: {
-                Group {
-                    if viewModel.isLoading {
-                        ProgressView()
-                    } else {
-                        Text("Sign In")
+                            Text("Sign in to your Academathon account")
+                                .font(.subheadline)
+                                .foregroundStyle(Theme.textSecondary)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.bottom, 32)
+
+                        // Email field
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Email")
+                                .font(.footnote)
+                                .fontWeight(.semibold)
+                                .foregroundStyle(Theme.textPrimary)
+
+                            TextField("you@example.com", text: $viewModel.email)
+                                .keyboardType(.emailAddress)
+                                .autocapitalization(.none)
+                                .autocorrectionDisabled()
+                                .foregroundStyle(Theme.textPrimary)
+                                .tint(Theme.accent)
+                                .padding(.horizontal, 14)
+                                .padding(.vertical, 14)
+                                .background(Theme.card)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: Theme.radiusMd)
+                                        .stroke(Theme.border, lineWidth: 1.5)
+                                )
+                                .clipShape(RoundedRectangle(cornerRadius: Theme.radiusMd))
+                        }
+
+                        // Password field
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Password")
+                                .font(.footnote)
+                                .fontWeight(.semibold)
+                                .foregroundStyle(Theme.textPrimary)
+
+                            SecureField("••••••••", text: $viewModel.password)
+                                .foregroundStyle(Theme.textPrimary)
+                                .tint(Theme.accent)
+                                .padding(.horizontal, 14)
+                                .padding(.vertical, 14)
+                                .background(Theme.card)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: Theme.radiusMd)
+                                        .stroke(Theme.border, lineWidth: 1.5)
+                                )
+                                .clipShape(RoundedRectangle(cornerRadius: Theme.radiusMd))
+                        }
+                        .padding(.top, 16)
+
+                        // Error message
+                        if let error = viewModel.errorMessage {
+                            Text(error)
+                                .font(.footnote)
+                                .foregroundStyle(.red)
+                                .frame(maxWidth: .infinity, alignment: .center)
+                                .padding(.top, 12)
+                        }
+
+                        // Sign In button
+                        Button {
+                            Task { await viewModel.login() }
+                        } label: {
+                            Group {
+                                if viewModel.isLoading {
+                                    ProgressView().tint(.white)
+                                } else {
+                                    Text("Sign In")
+                                        .fontWeight(.semibold)
+                                }
+                            }
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 50)
+                            .foregroundStyle(.white)
+                            .background(
+                                viewModel.isLoading || viewModel.email.isEmpty || viewModel.password.isEmpty
+                                    ? Theme.accentLight
+                                    : Theme.accent
+                            )
+                            .clipShape(RoundedRectangle(cornerRadius: Theme.radiusMd))
+                        }
+                        .disabled(viewModel.isLoading || viewModel.email.isEmpty || viewModel.password.isEmpty)
+                        .padding(.top, 24)
                     }
-                }
-                .frame(maxWidth: .infinity)
-                .frame(height: 44)
-            }
-            .buttonStyle(.borderedProminent)
-            .disabled(viewModel.isLoading || viewModel.email.isEmpty || viewModel.password.isEmpty)
+                    .padding(36)
+                    .background(Theme.card)
+                    .clipShape(RoundedRectangle(cornerRadius: Theme.radiusXl))
+                    .shadow(color: .black.opacity(0.08), radius: 24, x: 0, y: 4)
+                    .frame(maxWidth: 440)
+                    .padding(.horizontal, 24)
+                    .colorScheme(.light)
 
-            Spacer()
+                    Spacer(minLength: 60)
+                }
+                .frame(maxWidth: .infinity, minHeight: UIScreen.main.bounds.height)
+            }
         }
-        .padding(40)
-        .frame(maxWidth: 400)
-        .frame(maxWidth: .infinity)
         .onChange(of: viewModel.isLoggedIn) { _, newValue in
             if newValue { onLoginSuccess() }
         }

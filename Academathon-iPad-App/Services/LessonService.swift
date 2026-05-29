@@ -1,5 +1,19 @@
 import Foundation
 
+enum LessonError: LocalizedError {
+    case unauthorized
+    case serverError(Int)
+
+    var errorDescription: String? {
+        switch self {
+        case .unauthorized:
+            return "Your session has expired. Please log in again."
+        case .serverError(let code):
+            return "Server error (\(code)). Please try again."
+        }
+    }
+}
+
 struct LessonService {
     private let baseURL = "https://api.academathon.com"
 
@@ -11,11 +25,19 @@ struct LessonService {
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
 
         let (data, response) = try await URLSession.shared.data(for: request)
-        guard let http = response as? HTTPURLResponse, http.statusCode == 200 else {
+
+        guard let http = response as? HTTPURLResponse else {
             throw URLError(.badServerResponse)
         }
 
-        return try makeDecoder().decode([Booking].self, from: data)
+        switch http.statusCode {
+        case 200:
+            return try makeDecoder().decode([Booking].self, from: data)
+        case 401:
+            throw LessonError.unauthorized
+        default:
+            throw LessonError.serverError(http.statusCode)
+        }
     }
 
     private func makeDecoder() -> JSONDecoder {
