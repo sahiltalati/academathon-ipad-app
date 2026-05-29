@@ -46,6 +46,8 @@ struct LoginView: View {
                                 .keyboardType(.emailAddress)
                                 .autocapitalization(.none)
                                 .autocorrectionDisabled()
+                                .foregroundStyle(Theme.textPrimary)
+                                .tint(Theme.accent)
                                 .padding(.horizontal, 14)
                                 .padding(.vertical, 14)
                                 .background(Theme.card)
@@ -64,6 +66,8 @@ struct LoginView: View {
                                 .foregroundStyle(Theme.textPrimary)
 
                             SecureField("••••••••", text: $viewModel.password)
+                                .foregroundStyle(Theme.textPrimary)
+                                .tint(Theme.accent)
                                 .padding(.horizontal, 14)
                                 .padding(.vertical, 14)
                                 .background(Theme.card)
@@ -115,6 +119,7 @@ struct LoginView: View {
                     .shadow(color: .black.opacity(0.08), radius: 24, x: 0, y: 4)
                     .frame(maxWidth: 440)
                     .padding(.horizontal, 24)
+                    .colorScheme(.light)
 
                     Spacer(minLength: 60)
                 }
